@@ -56,7 +56,13 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
-        ]
+        ],
+        "test:types": "@php ./vendor/bin/phpstan analyse --ansi",
+		"test:unit": "@php ./vendor/bin/pest --colors=always --exclude-group=integration",
+		"test:integration": "@php ./vendor/bin/pest --colors=always --group=integration",
+		"standards:list": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs -i",
+		"standards:check": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs",
+		"standards:fix": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcbf"
     },
     "extra": {
         "laravel": {
