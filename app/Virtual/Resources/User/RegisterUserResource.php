@@ -27,7 +27,7 @@ class RegisterUserResource
 	 *  @OA\Property(
 	 *      title="Message",
 	 *      description="Message",
-	 * 		example="Some message",
+	 *      example="Some message",
 	 *  )
 	 *
 	 * @var string
