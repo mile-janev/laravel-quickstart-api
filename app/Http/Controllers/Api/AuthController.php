@@ -62,7 +62,7 @@ class AuthController extends Controller
 
 		return response()->json([
 				'user' => new UserResource($user),
-				'message' => __('You are successfully registered'),
+				'message' => __('messages.register_success'),
 			], 201);
 	}
 
@@ -110,11 +110,11 @@ class AuthController extends Controller
 			return response()->json([
 				'token' => $accessToken,
 				'user' => new UserResource($user),
-				'message' => __('You are successfully logged in')
+				'message' => __('messages.login_success')
 			], 200);
 		} else {
 			return response()->json([
-				'error' => 'Unauthorized'
+				'error' => __('messages.unauthorized')
 			], 401);
 		}
 	}
