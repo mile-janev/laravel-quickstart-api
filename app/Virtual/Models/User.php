@@ -23,7 +23,7 @@ class User
 	 *
 	 * @var integer
 	 */
-	private $id; //@phpstan-ignore-line
+	private $id;
 
 	/**
 	 *  @OA\Property(

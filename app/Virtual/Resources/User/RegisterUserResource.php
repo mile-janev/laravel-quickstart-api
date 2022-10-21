@@ -21,7 +21,7 @@ class RegisterUserResource
 	 *
 	 * @var \App\Virtual\Models\User
 	 */
-	private $user; //@phpstan-ignore-line
+	private $user;
 
 	/**
 	 *  @OA\Property(
@@ -32,5 +32,5 @@ class RegisterUserResource
 	 *
 	 * @var string
 	 */
-	private $message; //@phpstan-ignore-line
+	private $message;
 }
