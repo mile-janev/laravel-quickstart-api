@@ -14,6 +14,8 @@ return [
     */
 
     'unauthorized' => 'Unauthorized',
-    'login_success' => 'You are successfully logged in;',
-	'register_success' => 'You are successfully registered;'
+    'login_success' => 'You are successfully logged in',
+	'register_success' => 'You are successfully registered',
+	'logout_success' => 'You have successfully logged out',
+	'invalid_data' => 'The given data was invalid',
 ];

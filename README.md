@@ -1,4 +1,4 @@
-# Dashboard Monitor App
+# D66 App
 
 This is the repository containing the code for D66 API app. The app's main purpose is to help D66 to map all citizens and analyze their inclination to vote for them.
 
@@ -54,12 +54,6 @@ XDEBUG_MODE=coverage composer test:integration -- --coverage
 ```
 
 ## Architecture
-
-The app is fairly simple. It has user model for user authentication (user auth was set up using Laravel Breeze), projects model for handling all the projects, documentation model for storing the project documentation.
-
-It has a nice dashboard that was built using Tailwind CSS and Inertia.js (React), so that cool graphs and statistic are shown.
-
-Every day a background job triggers. That will ping the `dasboard-monitor-api` WP plugin on projects (authenticated APIs). Every project has associated keys that are encrypted and stored in the database (keys are generated on WordPress).
 
 ## Useful commands:
 `./vendor/bin/sail shell` => to ssh into the project

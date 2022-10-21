@@ -14,7 +14,8 @@ return [
     */
 
     'unauthorized' => 'Неавторизиран',
-    'login_success' => 'Вие сте успешно најавени;',
-	'register_success' => 'Вие сте успешно регистриран;'
-
+    'login_success' => 'Вие сте успешно најавени',
+	'register_success' => 'Вие сте успешно регистриран',
+	'logout_success' => 'Вие сте успешно одјавени',
+	'invalid_data' => 'The given data was invalid',
 ];

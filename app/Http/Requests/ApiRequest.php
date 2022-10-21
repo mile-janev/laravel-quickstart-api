@@ -23,7 +23,7 @@ class ApiRequest extends \Illuminate\Foundation\Http\FormRequest
 	{
 		throw new HttpResponseException(response()
 				->json([
-					'message' => __('The given data was invalid.'),
+					'message' => __('messages.invalid_data'),
 					'errors' => $validator->errors()
 				], 422));
 	}
