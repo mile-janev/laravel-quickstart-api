@@ -70,7 +70,7 @@ jobs:
         with:
           dependency-versions: highest
 
-      - name: Prepare the app2
+      - name: Prepare the app
         run: |
           php -r "file_exists('.env') || copy('.env.example', '.env');"
           php artisan key:generate
