@@ -70,11 +70,13 @@ jobs:
         with:
           dependency-versions: highest
 
-      - name: Prepare the app
+      - name: Setup env file
         run: |
           php -r "file_exists('.env') || copy('.env.example', '.env');"
           php artisan key:generate
-          php artisan passport:install
+
+      - name: Generate Passport encryption keys
+        run: |
           php artisan passport:keys
 
       - name: Check code consistency using PHPStan
