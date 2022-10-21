@@ -46,7 +46,7 @@ jobs:
 
       - name: Generate Passport encryption keys
         run: |
-          php artisan passport:install
+          php artisan passport:keys
 
       - name: Run integration tests
         run: composer test:integration
