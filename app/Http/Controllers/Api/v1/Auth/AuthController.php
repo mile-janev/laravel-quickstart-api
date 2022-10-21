@@ -30,13 +30,13 @@ class AuthController extends Controller
 	 *      tags={"Auth"},
 	 *      summary="POST register user",
 	 *      operationId="RegisterUser",
-	 * 		@OA\Parameter(
+	 *      @OA\Parameter(
 	 *          in="header",
 	 *          name="Accept-Language",
-	 * 			@OA\Schema(
+	 *          @OA\Schema(
 	 *              type="string",
 	 *              enum={"en-EN", "mk"},
-	 * 				default="en-EN"
+	 *              default="en-EN"
 	 *          ),
 	 *      ),
 	 *      @OA\RequestBody(
@@ -87,13 +87,13 @@ class AuthController extends Controller
 	 *      tags={"Auth"},
 	 *      summary="POST Login user",
 	 *      operationId="LoginUser",
-	 * 		@OA\Parameter(
+	 *      @OA\Parameter(
 	 *          in="header",
 	 *          name="Accept-Language",
-	 * 			@OA\Schema(
+	 *          @OA\Schema(
 	 *              type="string",
 	 *              enum={"en-EN", "mk"},
-	 * 				default="en-EN"
+	 *              default="en-EN"
 	 *          ),
 	 *      ),
 	 *      @OA\RequestBody(
@@ -150,19 +150,19 @@ class AuthController extends Controller
 	 *     summary="POST Logout user",
 	 *     operationId="Logout",
 	 *     security={ {"bearerAuth": {} }},
-	 * 	   @OA\Parameter(
+	 *     @OA\Parameter(
 	 *          in="header",
 	 *          name="Accept-Language",
-	 * 			@OA\Schema(
+	 *          @OA\Schema(
 	 *              type="string",
 	 *              enum={"en-EN", "mk"},
-	 * 				default="en-EN"
+	 *              default="en-EN"
 	 *          ),
 	 *     ),
 	 *     @OA\Response(
 	 *          response=200,
 	 *          description="You have succesfully logged out",
-	 * 			@OA\JsonContent(type="object")
+	 *          @OA\JsonContent(type="object")
 	 *      ),
 	 *      @OA\Response(
 	 *          response=401,
@@ -175,7 +175,7 @@ class AuthController extends Controller
 		//$user = Auth::user();
 		//$user->token()->revoke();
 
-        app(TokenRepository::class)->revokeAccessToken(Auth::user()->token()->id);
+		app(TokenRepository::class)->revokeAccessToken(Auth::user()->token()->id);
 
 		return response()->json([
 			'message' => __('messages.logout_success')
@@ -190,19 +190,19 @@ class AuthController extends Controller
 	 *     summary="POST Logout user from all devices",
 	 *     operationId="LogoutFromAllDevices",
 	 *     security={ {"passport": {} }},
-	 * 	   @OA\Parameter(
+	 *     @OA\Parameter(
 	 *          in="header",
 	 *          name="Accept-Language",
-	 * 			@OA\Schema(
+	 *          @OA\Schema(
 	 *              type="string",
 	 *              enum={"en-EN", "mk"},
-	 * 				default="en-EN"
+	 *              default="en-EN"
 	 *          ),
 	 *     ),
 	 *     @OA\Response(
 	 *          response=200,
 	 *          description="You have succesfully logged out",
-	 * 			@OA\JsonContent(type="object")
+	 *          @OA\JsonContent(type="object")
 	 *      ),
 	 *      @OA\Response(
 	 *          response=401,
@@ -214,7 +214,7 @@ class AuthController extends Controller
 	{
 		$tokens = Auth::user()->tokens->pluck('id');
 		Token::whereIn('id', $tokens)
-			->update(['revoked'=> true]);
+			->update(['revoked' => true]);
 
 		RefreshToken::whereIn('access_token_id', $tokens)->update(['revoked' => true]);
 

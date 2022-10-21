@@ -50,25 +50,26 @@ expect()->extend('toBeOne', function () {
 */
 
 uses()->beforeEach(function () {
-    $this->artisan('migrate');
-    $this->artisan('passport:install');
+	$this->artisan('migrate');
+	$this->artisan('passport:install');
 })->in('Feature');
 
 
-function headers($user = null){
-    $headers = ['Accept' => 'application/json'];
+function headers($user = null)
+{
+	$headers = ['Accept' => 'application/json'];
 
-    if (!is_null($user)) {
-        $token = $user->createToken('Token Name')->accessToken;
-        $headers['Authorization'] = 'Bearer ' . $token;
-    }
+	if (!is_null($user)) {
+		$token = $user->createToken('Token Name')->accessToken;
+		$headers['Authorization'] = 'Bearer ' . $token;
+	}
 
-    return $headers;
+	return $headers;
 }
 
 function loginUser(User $user = null)
 {
-    return Passport::actingAs($user ?? User::factory()->create());
+	return Passport::actingAs($user ?? User::factory()->create());
 }
 
 /**

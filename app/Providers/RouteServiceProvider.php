@@ -38,7 +38,7 @@ class RouteServiceProvider extends ServiceProvider
 		});
 
 		$this->mapApiV1Routes();
-        $this->mapApiV2Routes();
+		$this->mapApiV2Routes();
 	}
 
 	/**

@@ -25,5 +25,4 @@ Route::middleware("localization")->group(function () {
 		Route::post('user/logout-all-devices', [AuthController::class, 'logoutAllDevices'])->name('user.logoutAllDevices');
 		Route::get('user/profile', [UserController::class, 'profile'])->name('user.profile');
 	});
-
 });
