@@ -22,7 +22,7 @@ class LoginUserResource
 	 *
 	 * @var string
 	 */
-	private $token;
+	private $token; //@phpstan-ignore-line
 
 	/**
 	 *  @OA\Property(
@@ -32,7 +32,7 @@ class LoginUserResource
 	 *
 	 * @var \App\Virtual\Models\User
 	 */
-	private $user;
+	private $user; //@phpstan-ignore-line
 
 	/**
 	 *  @OA\Property(
@@ -43,5 +43,5 @@ class LoginUserResource
 	 *
 	 * @var string
 	 */
-	private $message;
+	private $message; //@phpstan-ignore-line
 }
