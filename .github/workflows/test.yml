@@ -43,6 +43,7 @@ jobs:
         run: |
           php -r "file_exists('.env') || copy('.env.example', '.env');"
           php artisan key:generate
+          php artisan passport:keys
 
       - name: Run integration tests
         run: composer test:integration

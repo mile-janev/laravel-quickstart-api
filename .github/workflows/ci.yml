@@ -74,6 +74,7 @@ jobs:
         run: |
           php -r "file_exists('.env') || copy('.env.example', '.env');"
           php artisan key:generate
+          php artisan passport:keys
 
       - name: Check code consistency using PHPStan
         run: composer test:types
