@@ -39,11 +39,12 @@ jobs:
         with:
           dependency-versions: highest
 
-      - name: Prepare the app
+      - name: Prepare the app1
         run: |
           php -r "file_exists('.env') || copy('.env.example', '.env');"
           php artisan key:generate
           php artisan passport:install
+          php artisan passport:keys
 
       - name: Run integration tests
         run: composer test:integration
