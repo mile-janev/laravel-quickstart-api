@@ -1,6 +1,6 @@
-# D66 App
+# Laravel API Starting Package App
 
-This is the repository containing the code for D66 API app. The app's main purpose is to help D66 to map all citizens and analyze their inclination to vote for them.
+This is the repository containing the code for Laravel API Starting Package app. The app's main purpose is to be used as a starting repository for all of our future projects.
 
 ## Requirements
 

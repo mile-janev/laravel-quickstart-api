@@ -5,7 +5,7 @@ return [
 	'documentations' => [
 		'default' => [
 			'api' => [
-				'title' => 'D66 OpenAPI UI',
+				'title' => 'Laravel Starting Package OpenAPI UI',
 			],
 
 			'routes' => [

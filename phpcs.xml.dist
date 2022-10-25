@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<ruleset name="D66 ruleset">
-	<description>Ruleset for the D66 project.</description>
+<ruleset name="Laravel API Starting Package ruleset">
+	<description>Ruleset for the Laravel API Starting Package project.</description>
 
 	<exclude-pattern>*/node_modules/*</exclude-pattern>
 	<exclude-pattern>*/vendor/*</exclude-pattern>
