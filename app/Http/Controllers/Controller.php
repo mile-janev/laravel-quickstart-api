@@ -9,7 +9,7 @@ use Illuminate\Routing\Controller as BaseController;
 
 /**
  * @OA\Info(
- *    title="Laravel Starting Package API",
+ *    title="Laravel Quickstart Package",
  *    version="1.0.0",
  * ),
  *

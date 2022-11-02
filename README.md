@@ -1,60 +1,98 @@
-# Laravel API Starting Package App
+# Laravel Quickstart API Package
 
-This is the repository containing the code for Laravel API Starting Package app. The app's main purpose is to be used as a starting repository for all of our future projects.
-
-## Requirements
-
-1. PHP 8.1+
-2. MySql 8.0+
-3. Node.js v 16+
-
-## Development
-You can setup local server and run the project, or you can use Docker container.
-If you are using Docker, just type `./vendor/bin/sail up` or just `sail up` if you have configured an alias in terminal, and the app will be served on http://localhost/ (i.e. https://laravel.com/docs/9.x/sail)
+Laravel Quickstart API is a boilerplate for developing Laravel REST API with typical packages preinstalled and configured. It includes everything you need to start building REST API in Laravel. We tried to make it as minimal as possible.
 
 
-Once you have the database set up, clone the repo and run
+
+# Installation
+You have 2 option to setup the project:
+
+## 1. Local server
+### Requirements
+- [Composer](https://getcomposer.org/download/)
+- PHP 8.1+
+- MySql 8.0+
+- Node.js v16+
+
+## 2. [Docker]((https://docs.docker.com/engine/install/)) + [Sail](https://laravel.com/docs/9.x/sail)
+### Requirements:
+- [Docker](https://docs.docker.com/engine/install/)
+- [Composer](https://getcomposer.org/download/)
+
+
+# Installation steps Local server
+
+## 1. Execute the following commands to clone the project, setup environment file, install libraries and generate key:
 
 ```bash
-composer install
+git clone https://github.com/mile-janev/laravel-quickstart-api.git
 cp .env.example .env
+composer install
 php artisan key:generate
 ```
 
-Modify the `.env` file with correct database details. You can then run the migrations
+## 2. Update .env file according to your local server credentials.
 
+## 3. Generate artisan key and migrate the database:
 ```bash
 php artisan migrate
 ```
 
-You can also seed the dummy data
+
+# Installation steps Docker + Sail
+
+## 1. Run Docker and execute the following commands in terminal to clone the project, setup environment file and install libraries:
 
 ```bash
-php artisan db:seed
+git clone https://github.com/mile-janev/laravel-quickstart-api.git
+cp .env.example .env
+composer install
+./vendor/bin/sail up
 ```
 
-## Running tests
+## 2. SSH into your server in different tab with:
+```bash
+./vendor/bin/sail root-shell
+```
 
-In order to run the integration tests you'll need to set up sqlite database so that the tests will use an in memory database.
+## 3. Generate artisan key and migrate the database:
+```bash
+php artisan key:generate
+php artisan migrate
+```
 
-Tests are written using [PEST](https://pestphp.com/). You can run them using
+# Generating API documentation
+Run the following command in terminal in order to regenerate the documentation
+```bash
+php artisan l5-swagger:generate
+```
 
+
+# Running tests
+Tests are written using [PEST](https://pestphp.com/). You can run them using 
 ```bash
 composer test:integration
+or
+composer test:unit
 ```
-
-or `test:unit` for unit tests.
 
 To run the coverage, make sure you have Xdebug 3 set up (v3 is super important, because v2 was super slow for code coverage).
 
-In order to run code coverage run
-
+In order to run code coverage
 ```bash
-XDEBUG_MODE=coverage composer test:integration -- --coverage
+composer test:integration -- --coverage
 ```
 
-## Architecture
+# Libraries included in this package
+- OpenAPI (Swagger) with examples;
+- Passport Authentication;
+- Pest Testing with examples;
+- Laravel Sail;
+- Github pipeline;
+- APIs versioning sturucture;
+- User Register, Login, Logout, Profile endpoints;
+- Codesniffer for standards check;
 
-## Useful commands:
-`./vendor/bin/sail shell` => to ssh into the project
-`./vendor/bin/sail root-shell` => to ssh into the project as root
+# License
+
+The Quickstart API is open-sourced software licensed under the  [MIT license](https://opensource.org/licenses/MIT).
