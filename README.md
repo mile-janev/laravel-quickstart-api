@@ -26,18 +26,23 @@ You have 2 option to setup the project:
 
 ```bash
 git clone https://github.com/mile-janev/laravel-quickstart-api.git
+cd laravel-quickstart-api
 cp .env.example .env
 composer install
 php artisan key:generate
 ```
 
-## 2. Update .env file according to your local server credentials.
+## 2. Create your local DB.
 
-## 3. Generate artisan key and migrate the database:
+## 3. Update .env file according to your local server credentials.
+
+## 4. Migrate the database and install passport:
 ```bash
 php artisan migrate
+php artisan passport:install
 ```
 
+## 5. Create your [virtual host](https://httpd.apache.org/docs/2.4/vhosts/examples.html) or just navigate to your [localhost project](http://localhost/laravel-quickstart-api/public/)
 
 # Installation steps Docker + Sail
 
@@ -84,14 +89,14 @@ composer test:integration -- --coverage
 ```
 
 # Libraries included in this package
-- OpenAPI (Swagger) with examples;
-- Passport Authentication;
-- Pest Testing with examples;
-- Laravel Sail;
+- OpenAPI [Swagger](https://swagger.io/) [library](https://github.com/DarkaOnLine/L5-Swagger) with examples inside the code.
+- [Passport](https://github.com/laravel/passport) Authentication;
+- [Pest](https://github.com/pestphp/pest-plugin-laravel) Testing with examples inside the code;
+- Laravel [Sail](https://github.com/laravel/sail);
 - Github pipeline;
 - APIs versioning sturucture;
 - User Register, Login, Logout, Profile endpoints;
-- Codesniffer for standards check;
+- [Codesniffer](https://github.com/squizlabs/php_codesniffer) for standards check;
 
 # License
 
