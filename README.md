@@ -24,11 +24,24 @@ You have 2 option to setup the project:
 
 ## 1. Execute the following commands to clone the project, setup environment file, install libraries and generate key:
 
+Clone the project:
 ```bash
 git clone https://github.com/mile-janev/laravel-quickstart-api.git
+```
+Navigate to the project:
+```bash
 cd laravel-quickstart-api
+```
+Copy environment file:
+```bash
 cp .env.example .env
+```
+Install libraries:
+```bash
 composer install
+```
+Generate app key:
+```bash
 php artisan key:generate
 ```
 
@@ -36,13 +49,23 @@ php artisan key:generate
 
 ## 3. Update .env file according to your local server credentials.
 
-## 4. Migrate the database and install passport:
+## 4. Migrate the database, install passport and change caching folders permissions:
+
+Migrate database:
 ```bash
 php artisan migrate
 php artisan passport:install
 ```
+Install Passport:
+```bash
+php artisan passport:install
+```
+Change caching folders permissions:
+```bash
+sudo chmod -R 777 storage && chmod -R 777 bootstrap/cache
+```
 
-## 5. Create your [virtual host](https://httpd.apache.org/docs/2.4/vhosts/examples.html) or just navigate to your [localhost project](http://localhost/laravel-quickstart-api/public/)
+## 5. Navigate to your [localhost project](http://localhost/laravel-quickstart-api/public/) or create [virtual host](https://httpd.apache.org/docs/2.4/vhosts/examples.html) 
 
 # Installation steps Docker + Sail
 
