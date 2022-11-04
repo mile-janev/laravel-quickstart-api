@@ -54,6 +54,7 @@ php artisan key:generate
 Migrate database:
 ```bash
 php artisan migrate
+php artisan passport:install
 ```
 Install Passport:
 ```bash
