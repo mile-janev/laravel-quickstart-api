@@ -61,7 +61,7 @@ php artisan passport:install
 ```
 Change caching folders permissions:
 ```bash
-sudo chmod -R 777 storage & sudo chmod -R 777 bootstrap/cache
+sudo chmod -R 777 storage && chmod -R 777 bootstrap/cache
 ```
 
 ## 5. Navigate to your [localhost project](http://localhost/laravel-quickstart-api/public/) or create [virtual host](https://httpd.apache.org/docs/2.4/vhosts/examples.html) 
