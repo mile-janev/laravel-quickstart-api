@@ -20,7 +20,7 @@ You have 2 option to setup the project:
 - [Composer](https://getcomposer.org/download/)
 
 
-# Installation steps Local server
+# Installation steps: Local server
 
 ## 1. Execute the following commands to clone the project, setup environment file, install libraries and generate key:
 
@@ -54,7 +54,6 @@ php artisan key:generate
 Migrate database:
 ```bash
 php artisan migrate
-php artisan passport:install
 ```
 Install Passport:
 ```bash
@@ -67,14 +66,32 @@ sudo chmod -R 777 storage && chmod -R 777 bootstrap/cache
 
 ## 5. Navigate to your [localhost project](http://localhost/laravel-quickstart-api/public/) or create [virtual host](https://httpd.apache.org/docs/2.4/vhosts/examples.html) 
 
-# Installation steps Docker + Sail
+# Installation steps: Docker + Sail
 
 ## 1. Run Docker and execute the following commands in terminal to clone the project, setup environment file and install libraries:
 
+Clone the project:
 ```bash
 git clone https://github.com/mile-janev/laravel-quickstart-api.git
+```
+Navigate to the project:
+```bash
+cd laravel-quickstart-api
+```
+Copy environment file:
+```bash
 cp .env.example .env
+```
+Install libraries:
+```bash
 composer install
+```
+Generate app key:
+```bash
+php artisan key:generate
+```
+Run Sail:
+```bash
 ./vendor/bin/sail up
 ```
 
@@ -83,10 +100,15 @@ composer install
 ./vendor/bin/sail root-shell
 ```
 
-## 3. Generate artisan key and migrate the database:
+## 4. Migrate the database and install passport:
+
+Migrate database:
 ```bash
-php artisan key:generate
 php artisan migrate
+```
+Install Passport:
+```bash
+php artisan passport:install
 ```
 
 # Generating API documentation
@@ -100,7 +122,9 @@ php artisan l5-swagger:generate
 Tests are written using [PEST](https://pestphp.com/). You can run them using 
 ```bash
 composer test:integration
+```
 or
+```bash
 composer test:unit
 ```
 
