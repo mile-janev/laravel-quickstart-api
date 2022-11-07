@@ -28,18 +28,22 @@ Clone the project:
 ```bash
 git clone https://github.com/mile-janev/laravel-quickstart-api.git
 ```
+
 Navigate to the project:
 ```bash
 cd laravel-quickstart-api
 ```
+
 Copy environment file:
 ```bash
 cp .env.example .env
 ```
+
 Install libraries:
 ```bash
 composer install
 ```
+
 Generate app key:
 ```bash
 php artisan key:generate
@@ -55,10 +59,12 @@ Migrate database:
 ```bash
 php artisan migrate
 ```
+
 Install Passport:
 ```bash
 php artisan passport:install
 ```
+
 Change caching folders permissions:
 ```bash
 sudo chmod -R 777 storage && chmod -R 777 bootstrap/cache
@@ -66,30 +72,43 @@ sudo chmod -R 777 storage && chmod -R 777 bootstrap/cache
 
 ## 5. Navigate to your [localhost project](http://localhost/laravel-quickstart-api/public/) or create [virtual host](https://httpd.apache.org/docs/2.4/vhosts/examples.html) 
 
-# Installation steps: Docker + Sail
+# Installation steps: [Docker]((https://docs.docker.com/engine/install/)) + [Sail](https://laravel.com/docs/9.x/sail)
 
 ## 1. Run Docker and execute the following commands in terminal to clone the project, setup environment file and install libraries:
+
+#### Run your local Docker machine.
+
 
 Clone the project:
 ```bash
 git clone https://github.com/mile-janev/laravel-quickstart-api.git
 ```
+
 Navigate to the project:
 ```bash
 cd laravel-quickstart-api
 ```
+
 Copy environment file:
 ```bash
 cp .env.example .env
 ```
+
 Install libraries:
 ```bash
 composer install
 ```
+
 Generate app key:
 ```bash
 php artisan key:generate
 ```
+
+Change caching folders permissions:
+```bash
+sudo chmod -R 777 storage && chmod -R 777 bootstrap/cache
+```
+
 Run Sail:
 ```bash
 ./vendor/bin/sail up
@@ -106,10 +125,13 @@ Migrate database:
 ```bash
 php artisan migrate
 ```
+
 Install Passport:
 ```bash
 php artisan passport:install
 ```
+
+## 5. Navigate to your [localhost](http://localhost/)
 
 # Generating API documentation
 Run the following command in terminal in order to regenerate the documentation
@@ -117,6 +139,7 @@ Run the following command in terminal in order to regenerate the documentation
 php artisan l5-swagger:generate
 ```
 
+Documentation can be found on <code>/api/docs/</code>
 
 # Running tests
 Tests are written using [PEST](https://pestphp.com/). You can run them using 
