@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\v1\Auth\AuthController;
-use App\Http\Controllers\Api\v1\User\UserController;
+use App\Http\Controllers\Api\V1\Auth\AuthController;
+use App\Http\Controllers\Api\V1\User\UserController;
+use LaravelJsonApi\Laravel\Facades\JsonApiRoute;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,23 @@ Route::middleware("localization")->group(function () {
 		Route::get('user/profile', [UserController::class, 'profile'])->name('user.profile');
 	});
 });
+
+
+JsonApiRoute::server('v1')
+	->namespace('App\Http\Controllers\Api\V1')
+	->resources(function ($server) {
+
+		$server->resource('users')
+			->parameter('id')
+			->relationships(function ($relationships) {
+				$relationships->hasMany('tasks');
+			});
+
+		$server->resource('tasks')
+			->parameter('id')
+			->relationships(function ($relationships) {
+				$relationships->hasMany('assignees');
+				$relationships->hasOne('creator');
+			});
+
+	});
