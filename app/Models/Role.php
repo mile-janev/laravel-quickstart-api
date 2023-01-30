@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Role extends Model
 {
-	const ADMIN = "admin";
-	const USER = "user";
+	public const ADMIN = "admin";
+	public const USER = "user";
 
-	const ADMIN_ID = 1;
-	const USER_ID = 2;
+	public const ADMIN_ID = 1;
+	public const USER_ID = 2;
 
 	public function users()
 	{
