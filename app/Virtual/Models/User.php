@@ -48,4 +48,20 @@ class User
 	 * @var string
 	 */
 	public $email;
+
+	/**
+	 *  @OA\Property(
+	 *      title="Roles",
+	 *      description="Roles",
+	 *      @OA\Items,
+	 *      example={
+	 *          "id": 1,
+	 *          "name": "admin",
+	 *          "description": "Administrator"
+	 *      }
+	 *  )
+	 *
+	 * @var array
+	 */
+	public $roles;
 }

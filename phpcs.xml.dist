@@ -14,6 +14,7 @@
 	<file>./resources</file>
 	<file>./routes</file>
 	<file>./tests</file>
+	<file>./database</file>
 
 	<!-- Additional arguments. -->
 	<arg value="sp" />
