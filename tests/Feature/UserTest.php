@@ -13,7 +13,8 @@ test('user has profile', function () {
 	$data = [
 		'id' => $user->id,
 		'name' => $user->name,
-		'email' => $user->email
+		'email' => $user->email,
+		'roles' => []
 	];
 
 	$response->assertExactJson($data);

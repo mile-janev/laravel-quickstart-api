@@ -11,7 +11,6 @@ use App\Http\Resources\UserResource;
 use App\Repositories\UserRepositoryInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Laravel\Passport\TokenRepository;
 use Laravel\Passport\RefreshToken;
 use Laravel\Passport\Token;
