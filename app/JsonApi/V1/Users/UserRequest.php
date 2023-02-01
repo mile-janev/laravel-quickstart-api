@@ -10,7 +10,6 @@ use LaravelJsonApi\Validation\Rule as JsonApiRule;
 
 class UserRequest extends ResourceRequest
 {
-
 	/**
 	 * Get the validation rules for the resource.
 	 *
