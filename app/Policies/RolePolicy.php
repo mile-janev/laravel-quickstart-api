@@ -65,9 +65,9 @@ class RolePolicy
 	 * @param  \App\Models\Role  $role
 	 * @return \Illuminate\Auth\Access\Response|bool
 	 */
-	public function delete(User $user, Role $role)
+	public function delete(?User $user, Role $role)
 	{
-		return false;
+		return true;
 	}
 
 	/**
@@ -89,7 +89,7 @@ class RolePolicy
 	 * @param  \App\Models\Role  $role
 	 * @return \Illuminate\Auth\Access\Response|bool
 	 */
-	public function forceDelete(User $user, Role $role)
+	public function forceDelete(?User $user, Role $role)
 	{
 		return false;
 	}

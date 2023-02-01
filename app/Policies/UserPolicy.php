@@ -95,7 +95,7 @@ class UserPolicy
 	}
 
 	/**
-	 * Determine whether the user can view the post's tags.
+	 * Determine whether the user can view the roles.
 	 *
 	 * @param  \App\Models\User|null  $user
 	 * @param  \App\Models\User  $model
@@ -105,4 +105,40 @@ class UserPolicy
 	{
 		return $this->view($user, $model);
 	}
+
+	    /**
+     * Determine whether the user can update the model's roles.
+     *
+     * @param User $user
+     * @param User $model
+     * @return bool|\Illuminate\Auth\Access\Response
+     */
+    public function updateRoles(?User $user, User $model)
+    {
+        return $this->update($user, $model);
+    }
+
+    /**
+    * Determine whether the user can attach roles to the model's roles relationship.
+     *
+     * @param User $user
+     * @param User $model
+     * @return bool|\Illuminate\Auth\Access\Response
+     */
+    public function attachRoles(?User $user, User $model)
+    {
+        return $this->update($user, $model);
+    }
+
+    /**
+     * Determine whether the user can detach roles from the model's roles relationship.
+     *
+     * @param User $user
+     * @param User $model
+     * @return bool|\Illuminate\Auth\Access\Response
+     */
+    public function detachRoles(?User $user, User $model)
+    {
+        return $this->update($user, $model);
+    }
 }
