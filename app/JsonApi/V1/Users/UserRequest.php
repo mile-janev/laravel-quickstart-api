@@ -21,7 +21,7 @@ class UserRequest extends ResourceRequest
 
 		$rules = [
 			'name'      => ['required', 'string', 'max:255'],
-			'email'     => ['required', 'string', 'email', 'max:255', Rule::unique('users', 'email')],
+			'email'     => ['required', 'string', 'email', 'max:255', Rule::unique('users', 'email')->ignore($model?->id)],
 			'password' => $model ? ['filled'] : ['required', 'confirmed', 'min:8'],
 			'roles' => JsonApiRule::toMany(),
 		];
