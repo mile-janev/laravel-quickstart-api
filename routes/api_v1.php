@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\v1\Auth\AuthController;
-use App\Http\Controllers\Api\v1\User\RoleController;
-use App\Http\Controllers\Api\v1\User\UserController;
+use App\Http\Controllers\Api\V1\Auth\AuthController;
+use App\Http\Controllers\Api\V1\User\RoleController;
+use App\Http\Controllers\Api\V1\User\UserController;
 
 /*
 |--------------------------------------------------------------------------
