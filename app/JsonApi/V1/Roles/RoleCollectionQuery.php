@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\JsonApi\V1\Roles;
 
 use LaravelJsonApi\Laravel\Http\Requests\ResourceQuery;
