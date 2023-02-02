@@ -75,20 +75,20 @@ class UserSchema extends Schema
 	}
 
 	/**
-     * Build an index query for this resource.
-     *
-     * @param Request|null $request
-     * @param Builder $query
-     * @return Builder
-     */
-    public function indexQuery(?Request $request, Builder $query): Builder
-    {
-       /*if ($user = optional($request)->user()) {
-            return $query->where(function (Builder $q) use ($user) {
-                return $q->whereNotNull('published_at')->orWhere('author_id', $user->getKey());
-            });
-        }*/
+	 * Build an index query for this resource.
+	 *
+	 * @param Request|null $request
+	 * @param Builder $query
+	 * @return Builder
+	 */
+	public function indexQuery(?Request $request, Builder $query): Builder
+	{
+	   /*if ($user = optional($request)->user()) {
+			return $query->where(function (Builder $q) use ($user) {
+				return $q->whereNotNull('published_at')->orWhere('author_id', $user->getKey());
+			});
+		}*/
 
-        return $query->whereNotNull('remember_token');
-    }
+		return $query->whereNotNull('remember_token');
+	}
 }
