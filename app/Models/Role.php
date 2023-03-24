@@ -20,6 +20,16 @@ class Role extends Model
 	protected $dates = ['deleted_at'];
 
 	/**
+	 * The attributes that are mass assignable.
+	 *
+	 * @var array<int, string>
+	 */
+	protected $fillable = [
+		'name',
+		'description',
+	];
+
+	/**
 	 * The attributes that should be hidden for serialization.
 	 *
 	 * @var array<int, string>
